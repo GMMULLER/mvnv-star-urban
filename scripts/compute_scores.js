@@ -93,8 +93,7 @@ function create_panel(allScores, optionsObject, wizard_panel_select){
     d3.select('#switch_' + category)
     .property('checked',selectedTabs.empty()? false : true);
 
-    // compute_scores(allScores);
-
+    compute_scores(allScores);
 
     //highlight all mini panel buttons for active tabs. 
     selectedTabs = d3.select(wizard_panel_select).selectAll('.is-active').each(function(tab){
@@ -116,7 +115,7 @@ function create_panel(allScores, optionsObject, wizard_panel_select){
     tabGroup.selectAll('li')
     .classed('is-active',false);
 
-    // compute_scores(allScores);
+    compute_scores(allScores);
 
     //highlight all mini panel buttons for active tabs. 
     selectedTabs = d3.select(wizard_panel_select).selectAll('.is-active').each(function(tab){
@@ -190,30 +189,29 @@ function compute_scores(allScores){
   //create a list of key/value pairs to use in the scores
   let activeOptions = d3.selectAll('.is-active').data(); 
   
-  let num2strMap = {
-    "1": "ones",
-    "2": "twos",
-    "3": "threes",
-    "0": "zeros"
-  };
+  // let num2strMap = {
+  //   "1": "ones",
+  //   "2": "twos",
+  //   "3": "threes",
+  //   "0": "zeros"
+  // };
 
+  // Object.keys(allScores).map(technique => {
+  //   allScores[technique].totalScore = 0;
+  //   allScores[technique].threes=[];
+  //   allScores[technique].twos=[];
+  //   allScores[technique].ones=[];
+  //   allScores[technique].zeros=[];
 
-  Object.keys(allScores).map(technique => {
-    allScores[technique].totalScore = 0;
-    allScores[technique].threes=[];
-    allScores[technique].twos=[];
-    allScores[technique].ones=[];
-    allScores[technique].zeros=[];
-
-    activeOptions.map(option=>{
-      let score = allScores[technique][option.category][option.option];
-      // console.log(technique,option.category,option.option,score);
-      allScores[technique].totalScore = allScores[technique].totalScore + score;
-      allScores[technique][num2strMap[score]].push([option.category,option.option]);
-    });
-     let score = activeOptions.length > 0 ? allScores[technique].totalScore / activeOptions.length : allScores[technique].totalScore;
-     allScores[technique].averageScore = Math.round( score * 10) / 10
-  });
+  //   activeOptions.map(option=>{
+  //     let score = allScores[technique][option.category][option.option];
+  //     // console.log(technique,option.category,option.option,score);
+  //     allScores[technique].totalScore = allScores[technique].totalScore + score;
+  //     allScores[technique][num2strMap[score]].push([option.category,option.option]);
+  //   });
+  //    let score = activeOptions.length > 0 ? allScores[technique].totalScore / activeOptions.length : allScores[technique].totalScore;
+  //    allScores[technique].averageScore = Math.round( score * 10) / 10
+  // });
 
   let scoreArray = Object.keys(allScores).map(key=>{
     return [key,allScores[key].averageScore]
@@ -234,13 +232,15 @@ function compute_scores(allScores){
     }
   })
 
-  render_techniques(scoreArray,allScores);
+  // let filteredScores = [];
+
+  render_techniques(allScores);
 }
 
 // function render_techniques(techniques,info) {
 function render_techniques(info) {
 
-  console.log("info", info);
+  console.log('allScores', info);
 
   let techniques = Object.keys(info).map(key=>{
     return [key,info[key].averageScore]
@@ -284,6 +284,7 @@ function render_techniques(info) {
   
   //  create_mini_panel(techniques,info);
 
+  d3.select('#recommendations').style('visibility','visible');
 
 }
 

@@ -169,8 +169,11 @@ howPanel:
       '{% for technique in site.techniques reversed  %}'
         allScores['{{technique.key}}']={};
         allScores['{{technique.key}}'].title='{{technique.title}}';
+        allScores['{{technique.key}}'].system='{{technique.system}}';
       '{% endfor %}' 
       
+      console.log("allScores", allScores);
+
       render_techniques(allScores);
 
             create_panel(allScores, optionsObjectPaperType, "#wizard_panel_paper_type");
