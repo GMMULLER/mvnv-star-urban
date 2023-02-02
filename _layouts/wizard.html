@@ -147,17 +147,9 @@ howPanel:
       
           <div class="column" id="recommendations" style="visibility:hidden; height:820px; overflow-y:scroll;">
         
-              {% include technique_card.html %}
-              {% include technique_card.html %}
-              {% include technique_card.html %}
-              {% include technique_card.html %}
-              {% include technique_card.html %}
-              {% include technique_card.html %}
-              {% include technique_card.html %}
-              {% include technique_card.html %}
-              {% include technique_card.html %}
-              {% include technique_card.html %}
-              {% include technique_card.html %}
+              {% for technique in site.techniques reversed  %}
+                {% include technique_card.html %}
+              {% endfor %}
         
           </div>
       
@@ -174,24 +166,13 @@ howPanel:
         let optionsObjectWhat = JSON.parse(('{{layout.whatPanel}}'.replace(/=>/g, ':')));
         let optionsObjectHow = JSON.parse(('{{layout.howPanel}}'.replace(/=>/g, ':')));
       
-        console.log(optionsObjectWhat);
-
       '{% for technique in site.techniques reversed  %}'
-        allScores['{{technique.key}}']=JSON.parse(('{{technique.scores}}'.replace(/=>/g, ':')));
+        allScores['{{technique.key}}']={};
         allScores['{{technique.key}}'].title='{{technique.title}}';
-        allScores['{{technique.key}}'].url='{{technique.url}}';
-        allScores['{{technique.key}}'].baseUrl='{{site.baseurl}}';
-        allScores['{{technique.key}}'].description='{{technique.description}}';
-        allScores['{{technique.key}}'].image='{{technique.image}}';
-        allScores['{{technique.key}}'].totalScore = 0;
-        allScores['{{technique.key}}'].optimal = '{{technique.optimal}}';
-        allScores['{{technique.key}}'].good = '{{technique.good}}';
-        allScores['{{technique.key}}'].adequate = '{{technique.adequate}}';
-        allScores['{{technique.key}}'].bad = '{{technique.bad}}';
       '{% endfor %}' 
       
-      console.log('allScores', allScores);
-            
+      render_techniques(allScores);
+
             create_panel(allScores, optionsObjectPaperType, "#wizard_panel_paper_type");
             create_panel(allScores, optionsObject, "#wizard_panel");
             create_panel(allScores, optionsObjectWhat, "#wizard_panel_what");

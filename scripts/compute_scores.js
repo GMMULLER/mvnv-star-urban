@@ -93,7 +93,7 @@ function create_panel(allScores, optionsObject, wizard_panel_select){
     d3.select('#switch_' + category)
     .property('checked',selectedTabs.empty()? false : true);
 
-    compute_scores(allScores);
+    // compute_scores(allScores);
 
 
     //highlight all mini panel buttons for active tabs. 
@@ -116,7 +116,7 @@ function create_panel(allScores, optionsObject, wizard_panel_select){
     tabGroup.selectAll('li')
     .classed('is-active',false);
 
-    compute_scores(allScores);
+    // compute_scores(allScores);
 
     //highlight all mini panel buttons for active tabs. 
     selectedTabs = d3.select(wizard_panel_select).selectAll('.is-active').each(function(tab){
@@ -128,7 +128,7 @@ function create_panel(allScores, optionsObject, wizard_panel_select){
 
   });
 
-  compute_scores(allScores);
+  // compute_scores(allScores);
 }
 
 function create_mini_panel(techniques,allScores){
@@ -234,42 +234,53 @@ function compute_scores(allScores){
     }
   })
 
-  // console.log('allScores_computed',scoreArray)
-
   render_techniques(scoreArray,allScores);
 }
 
-function render_techniques(techniques,info) {
+// function render_techniques(techniques,info) {
+function render_techniques(info) {
+
+  console.log("info", info);
+
+  let techniques = Object.keys(info).map(key=>{
+    return [key,info[key].averageScore]
+  }).sort((a,b)=>{
+    if (b[1] <a[1]){
+      return -1
+    }
+
+    if (b[1] === a[1]){
+      if (b[0] > a[0]){
+        return -1
+      } else {
+        return 1
+      }
+    }
+    if (b[1] >a[1]){
+      return 1
+    }
+  });
+
+  console.log('techniques', techniques);
 
   let color = d3.scaleLinear().domain([0,1,2,3])
     .range(['#f3a685','#cccccc','#92c5de','#1773af']);
 
    let cards = d3.selectAll('.techniqueCard').data(techniques);
 
-   cards.select('.rec').select('h4').select('.techniqueTitle').html(d=>'<a href="' + info[d[0]].baseUrl + info[d[0]].url + '">' + info[d[0]].title + '</a>');
+  //  cards.select('.rec').select('h4').select('.techniqueTitle').html(d=>'<a href="' + info[d[0]].doi + '">' + info[d[0]].title + '</a>');
+   
+  cards.select('.rec').select('h4').select('.techniqueTitle').html(d=>'<a href="#">' + info[d[0]].title + '</a>');
 
-   cards.select('.totalScore')
-   .style('background-color',d=>{
-    return color(d[1])})
+  // cards.select('img').property('src',d=>'/mvnv/assets/images/techniques/icons/' + info[d[0]].image);
 
-   cards.select('.totalScore')
-   .text(d=>d[1]);
+  // cards.select('.moreLink').html(d=>'<a href="' + info[d[0]].baseUrl + info[d[0]].url + '"> More... </a>');
 
-  cards.select('img').property('src',d=>'/mvnv/assets/images/techniques/icons/' + info[d[0]].image);
-
-  cards.select('.moreLink').html(d=>'<a href="' + info[d[0]].baseUrl + info[d[0]].url + '"> More... </a>');
-
-   cards.select('.techniqueDescription').text(d=>info[d[0]].description)
-
-   cards.select('.optimal').text(d=>info[d[0]].optimal)
-   cards.select('.good').text(d=>info[d[0]].good)
-   cards.select('.adequate').text(d=>info[d[0]].adequate)
-   cards.select('.bad')
-   .text(d=>info[d[0]].bad)
+  //  cards.select('.techniqueDescription').text(d=>info[d[0]].description)
 
    //only show this for techniques that actually have a 0 score.
-   cards.select('.scoreZero')
-   .style('display',d=> info[d[0]].bad.length === 0 ?  'none' : 'block');
+  //  cards.select('.scoreZero')
+  //   .style('display',d=> info[d[0]].bad.length === 0 ?  'none' : 'block');
   
   //  create_mini_panel(techniques,info);
 
