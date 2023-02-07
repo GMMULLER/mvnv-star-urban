@@ -61,7 +61,6 @@ function create_panel(allScores, optionsObject, wizard_panel_select){
   groups.select('i')
   .attr('class','fas fa-question-circle has-text-grey');
 
-
   let li = groups.select('ul').selectAll('li').data((d)=>optionsObject[d].options.map(option=>{return {category:d,option}}));
 
   let liEnter = li.enter().append('li');
@@ -127,7 +126,7 @@ function create_panel(allScores, optionsObject, wizard_panel_select){
 
   });
 
-  // compute_scores(allScores);
+  compute_scores(allScores);
 }
 
 function create_mini_panel(techniques,allScores){
@@ -154,7 +153,6 @@ function create_mini_panel(techniques,allScores){
   groups = groupsEnter.merge(groups);
 
   //Set data dependent attributes
-
 
   groups.select('#header')
   .text(d=>optionsObject[d.dimension].shortLabel ? optionsObject[d.dimension].shortLabel : optionsObject[d.dimension].label);
@@ -213,55 +211,240 @@ function compute_scores(allScores){
   //    allScores[technique].averageScore = Math.round( score * 10) / 10
   // });
 
-  let scoreArray = Object.keys(allScores).map(key=>{
-    return [key,allScores[key].averageScore]
-  }).sort((a,b)=>{
-    if (b[1] <a[1]){
-      return -1
+  activeOptionsArray = [];
+
+  activeOptions.map(elem => {
+
+    switch(elem.option) {
+      case "System":
+        activeOptionsArray.push("system");
+        break;
+      case "Technique":
+        activeOptionsArray.push("technique");
+        break;
+      case "Design study":
+        activeOptionsArray.push("design_study");
+        break;
+      case "Evaluation":
+        activeOptionsArray.push("evaluation");
+        break;
+      case "Data":
+        activeOptionsArray.push("data");
+        break;
+      case "Analysis":
+        activeOptionsArray.push("analysis");
+        break;
+      case "Sunlight access":
+        activeOptionsArray.push("sunlight_access");
+        break;
+      case "Wind":
+        activeOptionsArray.push("wind_ventilation");
+        break;
+      case "View Impact":
+        activeOptionsArray.push("view_impact");
+        break;
+      case "Energy":
+        activeOptionsArray.push("energy");
+        break;
+      case "Disaster mgmt":
+        activeOptionsArray.push("damage_and_disaster_management");
+        break;
+      case "Climate":
+        activeOptionsArray.push("climate");
+        break;
+      case "Noise":
+        activeOptionsArray.push("sound");
+        break;
+      case "Property Cadastre":
+        activeOptionsArray.push("property_cadastre");
+        break;
+      case "Other":
+        activeOptionsArray.push("others");
+        break;
+      case "Lookup":
+        activeOptionsArray.push("lookup");
+        break;
+      case "Browse":
+        activeOptionsArray.push("browse");
+        break;
+      case "Locate":
+        activeOptionsArray.push("locate");
+        break;
+      case "Explore":
+        activeOptionsArray.push("explore");
+        break;
+      case "Identify":
+        activeOptionsArray.push("identify");
+        break;
+      case "Compare":
+        activeOptionsArray.push("compare");
+        break;
+      case "Summarize":
+        activeOptionsArray.push("summarize");
+        break;
+      case "Spatial relationship":
+        activeOptionsArray.push("spatial_relation");
+        break;
+      case "Distribution":
+        activeOptionsArray.push("distribution");
+        break;
+      case "Trends":
+        activeOptionsArray.push("trends");
+        break;
+      case "Outliers":
+        activeOptionsArray.push("outliers");
+        break;
+      case "Extremes":
+        activeOptionsArray.push("extremes");
+        break;
+      case "Features":
+        activeOptionsArray.push("features");
+        break;
+      case "Buildings":
+        activeOptionsArray.push("buildings");
+        break;
+      case "Streets":
+        activeOptionsArray.push("streets");
+        break;
+      case "Nature":
+        activeOptionsArray.push("nature");
+        break;
+      case "Uniform":
+        activeOptionsArray.push("uniform_discretization");
+        break;
+      case "Semantic":
+        activeOptionsArray.push("structural_subdivision");
+        break;
+      case "Multivariate":
+        activeOptionsArray.push("multivariate");
+        break;
+      case "Volumetric":
+        activeOptionsArray.push("volumetric");
+        break;
+      case "Temporal":
+        activeOptionsArray.push("temporal");
+        break;
+      case "Sensing":
+        activeOptionsArray.push("sensing");
+        break;
+      case "Statistical":
+        activeOptionsArray.push("statistical");
+        break;
+      case "Simulation":
+        activeOptionsArray.push("simulation_based");
+        break;
+      case "Learning":
+        activeOptionsArray.push("learning_based");
+        break;
+      case "Surveyed":
+        activeOptionsArray.push("surveyed");
+        break;
+      case "Micro":
+        activeOptionsArray.push("micro");
+        break;
+      case "Meso":
+        activeOptionsArray.push("multi_block");
+        break;
+      case "Macro":
+        activeOptionsArray.push("city");
+        break;
+      case "VA w/o models":
+        activeOptionsArray.push("va_wo_model");
+        break;
+      case "Post-model VA":
+        activeOptionsArray.push("post_model");
+        break;
+      case "Model integrated VA":
+        activeOptionsArray.push("model_integrated");
+        break;
+      case "VA-assisted model":
+        activeOptionsArray.push("assisted_models");
+        break;
+      case "Overlay":
+        activeOptionsArray.push("overlay");
+        break;
+      case "Embedded view":
+        activeOptionsArray.push("embedded");
+        break;
+      case "Linked view":
+        activeOptionsArray.push("linked");
+        break;
+      case "Animation":
+        activeOptionsArray.push("temporal_jx");
+        break;
+      case "Spatial jx":
+        activeOptionsArray.push("spatial_jx");
+        break;
+      case "Glyphs / streamlines":
+        activeOptionsArray.push("glyphs");
+        break;
+      case "Bar charts":
+        activeOptionsArray.push("bar_charts");
+        break;
+      case "Scatterplots":
+        activeOptionsArray.push("scatterplots");
+        break;
+      case "Matrix":
+        activeOptionsArray.push("matrix");
+        break;
+      case "Parallel coord.":
+        activeOptionsArray.push("parallel_coordinates");
+        break;
+      case "2D map":
+        activeOptionsArray.push("map_2d");
+        break;
+      case "3D map":
+        activeOptionsArray.push("map_3d");
+        break;
+      case "Distortion":
+        activeOptionsArray.push("distortion");
+        break;
+      case "Ghosting":
+        activeOptionsArray.push("ghosting");
+        break;
+      case "Birds view":
+        activeOptionsArray.push("birds_view");
+        break;
+      case "Multi-view":
+        activeOptionsArray.push("multi_view");
+        break;
+      case "Other":
+        activeOptionsArray.push("other");
+        break;
     }
 
-    if (b[1] === a[1]){
-      if (b[0] > a[0]){
-        return -1
-      } else {
-        return 1
-      }
-    }
-    if (b[1] >a[1]){
-      return 1
-    }
-  })
-
-  // let filteredScores = [];
-
-  render_techniques(allScores);
-}
-
-// function render_techniques(techniques,info) {
-function render_techniques(info) {
-
-  console.log('allScores', info);
-
-  let techniques = Object.keys(info).map(key=>{
-    return [key,info[key].averageScore]
-  }).sort((a,b)=>{
-    if (b[1] <a[1]){
-      return -1
-    }
-
-    if (b[1] === a[1]){
-      if (b[0] > a[0]){
-        return -1
-      } else {
-        return 1
-      }
-    }
-    if (b[1] >a[1]){
-      return 1
-    }
   });
 
-  console.log('techniques', techniques);
+  let filteredScores = [];
+
+  for(const keyScore of Object.keys(allScores)){
+
+    let score = allScores[keyScore];
+
+    let includeScore = true;
+
+    for(const key of Object.keys(score.tags)){
+
+      if(activeOptionsArray.includes(key) && score.tags[key] === "False"){
+        includeScore = false;
+      }
+    }
+
+    if(includeScore){
+      filteredScores.push(keyScore);
+    }
+  }
+
+  render_techniques(allScores, filteredScores);
+}
+
+function render_techniques(info, filteredScores) {
+
+  console.log("filteredScores", filteredScores);
+
+  let techniques = Object.keys(info).map(key=>{
+    return [key]
+  });
 
   let color = d3.scaleLinear().domain([0,1,2,3])
     .range(['#f3a685','#cccccc','#92c5de','#1773af']);
@@ -270,7 +453,11 @@ function render_techniques(info) {
 
   //  cards.select('.rec').select('h4').select('.techniqueTitle').html(d=>'<a href="' + info[d[0]].doi + '">' + info[d[0]].title + '</a>');
    
-  cards.select('.rec').select('h4').select('.techniqueTitle').html(d=>'<a href="#">' + info[d[0]].title + '</a>');
+  cards.select('.rec').select('h4').select('.techniqueTitle').html(d=>'<a href="' + info[d[0]].baseUrl + info[d[0]].url + '">' + info[d[0]].title + '</a>');
+
+  if(filteredScores != undefined){
+    cards.style('display', d => filteredScores.includes(d[0]) ? 'block' : 'none');
+  }
 
   // cards.select('img').property('src',d=>'/mvnv/assets/images/techniques/icons/' + info[d[0]].image);
 
