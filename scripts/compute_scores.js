@@ -217,7 +217,7 @@ function compute_scores(allScores){
 
     switch(elem.option) {
       case "System":
-        activeOptionsArray.push("system");
+        activeOptionsArray.push("system_type");
         break;
       case "Technique":
         activeOptionsArray.push("technique");
@@ -240,7 +240,7 @@ function compute_scores(allScores){
       case "Wind":
         activeOptionsArray.push("wind_ventilation");
         break;
-      case "View Impact":
+      case "View impact":
         activeOptionsArray.push("view_impact");
         break;
       case "Energy":
@@ -410,7 +410,18 @@ function compute_scores(allScores){
         break;
       case "Other":
         activeOptionsArray.push("other");
+      case "Walking":
+        activeOptionsArray.push("walking");
         break;
+      case "Steering":
+        activeOptionsArray.push("steering");
+        break;
+      case "Selection":
+        activeOptionsArray.push("selection_based");
+        break;
+      case "Manipulation":
+        activeOptionsArray.push("manipulation_based");
+        break;   
     }
 
   });
@@ -430,7 +441,7 @@ function compute_scores(allScores){
       }
     }
 
-    if(includeScore){
+    if(includeScore && keyScore != ""){
       filteredScores.push(keyScore);
     }
   }
