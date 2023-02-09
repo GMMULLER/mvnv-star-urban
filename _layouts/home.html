@@ -55,7 +55,7 @@
                             <p class="subtitle">Technique recommendations to fit your needs!
 
                                 <br/><br/>
-                                Navigate to the <a href='/mvnv/wizard'>wizard tab</a> and select your specific network
+                                Navigate to the <a href='/vis/wizard'>wizard tab</a> and select your specific network
                                 characteristics, such as the size of the network and its type,
                                 and what tasks are relevant for your analysis and receive technique recommendations that
                                 are best suited to your selection.</p>
@@ -73,16 +73,6 @@
                                     </article>
 
                         </div>
-                        <div class="tile is-parent">
-                                    <article class="tile is-child notification is-link">
-                                        <p class="title">Slides from the IEEE VIS 2019 Tutorial</p>
-                                        <p><b><a
-                                                href="http://sci.utah.edu/~vdl/talks/2019-10-20_tutorial_mvnv_slides.key">Keynote Format</a></b> <br>
-                                                <b><a
-                                                href="http://sci.utah.edu/~vdl/talks/2019-10-20_tutorial_mvnv_slides.pdf">PDF Format</a></b> <br>
-            
-                                    </article>
-                            </div>
                             </div>
 
                                 
@@ -148,11 +138,11 @@
                 console.log('groupId is ', groupId);
 
                 if (groupId.includes('label')) {
-                    window.location = '/mvnv/techniques/';
+                    window.location = '/vis/techniques/';
                 } else if (groupId.includes('Layer_1')) {
                     //do nothing
                 } else {
-                    window.location = '/mvnv/techniques/' + groupId + '/';
+                    window.location = '/vis/techniques/' + groupId + '/';
                 }
             });
 

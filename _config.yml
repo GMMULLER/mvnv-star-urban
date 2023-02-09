@@ -1,19 +1,17 @@
 # Site settings
-title: MVN Visualization Techniques
-email: cnobre@sci.utah.edu;alex@sci.utah.edu
-description: "Partner website for STAR on Visualization Multivariate Networks"
-baseurl: "/mvnv"
-url: "http://vdl.sci.utah.edu"
-twitter_username: visdesignlab
-github_username: visdesignlab/mvnv
+title: A Survey on Visual Analytics for 3D Urban Data
+description: "Website for Urban Survey"
+baseurl: "/vis"
+url: "https://urban-survey.github.io/"
+domain: "urban-survey.github.io"
+github_username: urban-survey/vis
+
 youtube_username:
 facebook_page:
 safe: false
 lsi: false
 google_analytics: "'--'"
 use_analytics: false
-
-
 
 plugins:
   - jekyll-redirect-from

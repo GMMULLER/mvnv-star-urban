@@ -278,12 +278,10 @@ howPanel:
         allScores['{{technique.key}}'].tags.statistical_evaluation='{{technique.statistical_evaluation}}';
         allScores['{{technique.key}}'].tags.expert_interviews='{{technique.expert_interviews}}';
 
-
-        // card data
-        allScores['{{technique.key}}'].cardData = {};
-
-        allScores['{{technique.key}}'].cardData.abstract = '{{technique.abstract}}';
-
+        allScores['{{technique.key}}'].abstract = '{{technique.abstract}}';
+        allScores['{{technique.key}}'].publication_title = '{{technique.publication_title}}';
+        allScores['{{technique.key}}'].doi = '{{technique.doi}}';
+        allScores['{{technique.key}}'].publication_year = '{{technique.publication_year}}';
 
       '{% endfor %}' 
       
