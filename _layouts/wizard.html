@@ -278,6 +278,13 @@ howPanel:
         allScores['{{technique.key}}'].tags.statistical_evaluation='{{technique.statistical_evaluation}}';
         allScores['{{technique.key}}'].tags.expert_interviews='{{technique.expert_interviews}}';
 
+
+        // card data
+        allScores['{{technique.key}}'].cardData = {};
+
+        allScores['{{technique.key}}'].cardData.abstract = '{{technique.abstract}}';
+
+
       '{% endfor %}' 
       
       render_techniques(allScores);

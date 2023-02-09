@@ -432,6 +432,8 @@ function compute_scores(allScores){
 
     let score = allScores[keyScore];
 
+    console.log(score);
+
     let includeScore = true;
 
     for(const key of Object.keys(score.tags)){
