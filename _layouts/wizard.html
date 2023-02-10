@@ -13,6 +13,15 @@ paperTypePanel:
       - "Analysis"
 
 whyPanel:
+  urban_life_cycle:
+    label: "Urban Life Cycle (WHY)"
+    options:
+      - "Generation"
+      - "Curation & transformation"
+      - "Management"
+      - "Modeling"
+      - "Urban Analysis"
+      - "Visualization"
   use_case: 
     label: "Use Case (WHY)"
     options: 
@@ -35,15 +44,20 @@ whyPanel:
       - Identify
       - Compare
       - Summarize
-      - "Spatial relationship" 
   analysis_target:
-    label:  "Analysis Target (WHY)"
+    label: "Analysis Target (WHY)"
     options: 
       - Distribution
       - Trends
       - Outliers
       - Extremes
       - Features
+  visual_tasks:
+    label: "Visual Tasks (WHY)"
+    options:
+      - "Target Discovery"
+      - "Target Access"
+      - "Spatial Relationship"
 
 whatPanel:
   physical_data_entities: 
@@ -57,6 +71,7 @@ whatPanel:
     options: 
       - Uniform
       - Semantic
+      - Univariate
       - Multivariate
       - Volumetric
       - Temporal
@@ -83,7 +98,7 @@ howPanel:
       - "Post-model VA"
       - "Model integrated VA"
       - "VA-assisted model"
-  layers: 
+  layers:
     label: "Layers (HOW)"
     options: 
       - "Overlay"
@@ -91,13 +106,22 @@ howPanel:
       - "Linked view"
       - "Animation"
       - "Spatial jx"
+  visualization_reduction:
+    label: "Visualization Reducation (HOW)"
+    options:
+      - "Filter"
+      - "Aggregate"
+      - "Embed"
   encoding: 
     label: "Encoding (HOW)"
     options: 
       - "Glyphs / streamlines"
       - "Bar charts"
       - "Scatterplots"
+      - "Linegraphs"
       - "Matrix"
+      - "Grid"
+      - "BoxPlot"
       - "Parallel coord."
       - "2D map"
       - "3D map"
@@ -113,9 +137,25 @@ howPanel:
     options: 
       - "Distortion"
       - "Ghosting"
+      - "Culling"
       - "Birds view"
       - "Multi-view"
+      - "Assisted Steering"
       - "Other"
+  technology: 
+    label: "Technology (HOW)"
+    options: 
+      - "VR / Cave"
+      - "AR"
+      - "Desktop"
+      - "Mobile"
+  evaluation: 
+    label: "Evaluation (HOW)"
+    options: 
+      - "Case Study"
+      - "User Study"
+      - "Statistical Evaluation"
+      - "Expert Interviews"
 
 ---
 
@@ -174,56 +214,56 @@ howPanel:
 
         allScores['{{technique.key}}'].tags={};
 
-        allScores['{{technique.key}}'].tags.system_type='{{technique.system_type}}';
-        allScores['{{technique.key}}'].tags.technique='{{technique.technique}}';
-        allScores['{{technique.key}}'].tags.design_study='{{technique.design_study}}';
-        allScores['{{technique.key}}'].tags.evaluation='{{technique.evaluation}}';
-        allScores['{{technique.key}}'].tags.data='{{technique.data}}';
-        allScores['{{technique.key}}'].tags.analysis='{{technique.analysis}}';
-        allScores['{{technique.key}}'].tags.generation='{{technique.generation}}';
-        allScores['{{technique.key}}'].tags.curation_and_transformation='{{technique.curation_and_transformation}}';
-        allScores['{{technique.key}}'].tags.management='{{technique.management}}';
-        allScores['{{technique.key}}'].tags.modeling='{{technique.modeling}}';
-        allScores['{{technique.key}}'].tags.energy='{{technique.energy}}';
-        allScores['{{technique.key}}'].tags.urban_analysis='{{technique.urban_analysis}}';
-        allScores['{{technique.key}}'].tags.visualization='{{technique.visualization}}';
-        allScores['{{technique.key}}'].tags.sunlight_access='{{technique.sunlight_access}}';
-        allScores['{{technique.key}}'].tags.wind_ventilation='{{technique.wind_ventilation}}';
-        allScores['{{technique.key}}'].tags.view_impact='{{technique.view_impact}}';
-        allScores['{{technique.key}}'].tags.damage_and_disaster_management='{{technique.damage_and_disaster_management}}';
-        allScores['{{technique.key}}'].tags.climate='{{technique.climate}}';
-        allScores['{{technique.key}}'].tags.sound='{{technique.sound}}';
-        allScores['{{technique.key}}'].tags.property_cadastre='{{technique.property_cadastre}}';
-        allScores['{{technique.key}}'].tags.others='{{technique.others}}';
-        allScores['{{technique.key}}'].tags.lookup='{{technique.lookup}}';
-        allScores['{{technique.key}}'].tags.browse='{{technique.browse}}';
-        allScores['{{technique.key}}'].tags.locate='{{technique.locate}}';
-        allScores['{{technique.key}}'].tags.explore='{{technique.explore}}';
-        allScores['{{technique.key}}'].tags.identify='{{technique.identify}}';
-        allScores['{{technique.key}}'].tags.compare='{{technique.compare}}';
-        allScores['{{technique.key}}'].tags.summarize='{{technique.summarize}}';
-        allScores['{{technique.key}}'].tags.distribution='{{technique.distribution}}';
-        allScores['{{technique.key}}'].tags.trends='{{technique.trends}}';
-        allScores['{{technique.key}}'].tags.outliers='{{technique.outliers}}';
-        allScores['{{technique.key}}'].tags.extremes='{{technique.extremes}}';
-        allScores['{{technique.key}}'].tags.features='{{technique.features}}';
-        allScores['{{technique.key}}'].tags.target_discovery='{{technique.target_discovery}}';
-        allScores['{{technique.key}}'].tags.target_access='{{technique.target_access}}';
-        allScores['{{technique.key}}'].tags.spatial_relation='{{technique.spatial_relation}}';
-        allScores['{{technique.key}}'].tags.buildings='{{technique.buildings}}';
-        allScores['{{technique.key}}'].tags.streets='{{technique.streets}}';
-        allScores['{{technique.key}}'].tags.nature='{{technique.nature}}';
-        allScores['{{technique.key}}'].tags.uniform_discretization='{{technique.uniform_discretization}}';
-        allScores['{{technique.key}}'].tags.structural_subdivision='{{technique.structural_subdivision}}';
-        allScores['{{technique.key}}'].tags.univariate='{{technique.univariate}}';
-        allScores['{{technique.key}}'].tags.multivariate='{{technique.multivariate}}';
-        allScores['{{technique.key}}'].tags.volumetric='{{technique.volumetric}}';
-        allScores['{{technique.key}}'].tags.temporal='{{technique.temporal}}';
-        allScores['{{technique.key}}'].tags.sensing='{{technique.sensing}}';
-        allScores['{{technique.key}}'].tags.statistical='{{technique.statistical}}';
-        allScores['{{technique.key}}'].tags.simulation_based='{{technique.simulation_based}}';
-        allScores['{{technique.key}}'].tags.learning_based='{{technique.learning_based}}';
-        allScores['{{technique.key}}'].tags.surveyed='{{technique.surveyed}}';
+        allScores['{{technique.key}}'].tags.system_type='{{technique.classifications.system_type}}';
+        allScores['{{technique.key}}'].tags.technique='{{technique.classifications.technique}}';
+        allScores['{{technique.key}}'].tags.design_study='{{technique.classifications.design_study}}';
+        allScores['{{technique.key}}'].tags.evaluation='{{technique.classifications.evaluation}}';
+        allScores['{{technique.key}}'].tags.data='{{technique.classifications.data}}';
+        allScores['{{technique.key}}'].tags.analysis='{{technique.classifications.analysis}}';
+        allScores['{{technique.key}}'].tags.generation='{{technique.classifications.generation}}';
+        allScores['{{technique.key}}'].tags.curation_and_transformation='{{technique.classifications.curation_and_transformation}}';
+        allScores['{{technique.key}}'].tags.management='{{technique.classifications.management}}';
+        allScores['{{technique.key}}'].tags.modeling='{{technique.classifications.modeling}}';
+        allScores['{{technique.key}}'].tags.energy='{{technique.classifications.energy}}';
+        allScores['{{technique.key}}'].tags.urban_analysis='{{technique.classifications.urban_analysis}}';
+        allScores['{{technique.key}}'].tags.visualization='{{technique.classifications.visualization}}';
+        allScores['{{technique.key}}'].tags.sunlight_access='{{technique.classifications.sunlight_access}}';
+        allScores['{{technique.key}}'].tags.wind_ventilation='{{technique.classifications.wind_ventilation}}';
+        allScores['{{technique.key}}'].tags.view_impact='{{technique.classifications.view_impact}}';
+        allScores['{{technique.key}}'].tags.damage_and_disaster_management='{{technique.classifications.damage_and_disaster_management}}';
+        allScores['{{technique.key}}'].tags.climate='{{technique.classifications.climate}}';
+        allScores['{{technique.key}}'].tags.sound='{{technique.classifications.sound}}';
+        allScores['{{technique.key}}'].tags.property_cadastre='{{technique.classifications.property_cadastre}}';
+        allScores['{{technique.key}}'].tags.others='{{technique.classifications.others}}';
+        allScores['{{technique.key}}'].tags.lookup='{{technique.classifications.lookup}}';
+        allScores['{{technique.key}}'].tags.browse='{{technique.classifications.browse}}';
+        allScores['{{technique.key}}'].tags.locate='{{technique.classifications.locate}}';
+        allScores['{{technique.key}}'].tags.explore='{{technique.classifications.explore}}';
+        allScores['{{technique.key}}'].tags.identify='{{technique.classifications.identify}}';
+        allScores['{{technique.key}}'].tags.compare='{{technique.classifications.compare}}';
+        allScores['{{technique.key}}'].tags.summarize='{{technique.classifications.summarize}}';
+        allScores['{{technique.key}}'].tags.distribution='{{technique.classifications.distribution}}';
+        allScores['{{technique.key}}'].tags.trends='{{technique.classifications.trends}}';
+        allScores['{{technique.key}}'].tags.outliers='{{technique.classifications.outliers}}';
+        allScores['{{technique.key}}'].tags.extremes='{{technique.classifications.extremes}}';
+        allScores['{{technique.key}}'].tags.features='{{technique.classifications.features}}';
+        allScores['{{technique.key}}'].tags.target_discovery='{{technique.classifications.target_discovery}}';
+        allScores['{{technique.key}}'].tags.target_access='{{technique.classifications.target_access}}';
+        allScores['{{technique.key}}'].tags.spatial_relation='{{technique.classifications.spatial_relation}}';
+        allScores['{{technique.key}}'].tags.buildings='{{technique.classifications.buildings}}';
+        allScores['{{technique.key}}'].tags.streets='{{technique.classifications.streets}}';
+        allScores['{{technique.key}}'].tags.nature='{{technique.classifications.nature}}';
+        allScores['{{technique.key}}'].tags.uniform_discretization='{{technique.classifications.uniform_discretization}}';
+        allScores['{{technique.key}}'].tags.structural_subdivision='{{technique.classifications.structural_subdivision}}';
+        allScores['{{technique.key}}'].tags.univariate='{{technique.classifications.univariate}}';
+        allScores['{{technique.key}}'].tags.multivariate='{{technique.classifications.multivariate}}';
+        allScores['{{technique.key}}'].tags.volumetric='{{technique.classifications.volumetric}}';
+        allScores['{{technique.key}}'].tags.temporal='{{technique.classifications.temporal}}';
+        allScores['{{technique.key}}'].tags.sensing='{{technique.classifications.sensing}}';
+        allScores['{{technique.key}}'].tags.statistical='{{technique.classifications.statistical}}';
+        allScores['{{technique.key}}'].tags.simulation_based='{{technique.classifications.simulation_based}}';
+        allScores['{{technique.key}}'].tags.learning_based='{{technique.classifications.learning_based}}';
+        allScores['{{technique.key}}'].tags.surveyed='{{technique.classifications.surveyed}}';
 
         if('{{technique.site}}' == "True" || '{{technique.block}}' == "True"){
           allScores['{{technique.key}}'].tags.micro="True";
@@ -237,46 +277,46 @@ howPanel:
           allScores['{{technique.key}}'].tags.micro="False";
         }
         
-        allScores['{{technique.key}}'].tags.multi_block='{{technique.multi_block}}';
-        allScores['{{technique.key}}'].tags.city='{{technique.city}}';
-        allScores['{{technique.key}}'].tags.va_wo_model='{{technique.va_wo_model}}';
-        allScores['{{technique.key}}'].tags.post_model='{{technique.post_model}}';
-        allScores['{{technique.key}}'].tags.model_integrated='{{technique.model_integrated}}';
-        allScores['{{technique.key}}'].tags.assisted_models='{{technique.assisted_models}}';
-        allScores['{{technique.key}}'].tags.overlay='{{technique.overlay}}';
-        allScores['{{technique.key}}'].tags.embedded='{{technique.embedded}}';
-        allScores['{{technique.key}}'].tags.linked='{{technique.linked}}';
-        allScores['{{technique.key}}'].tags.temporal_jx='{{technique.temporal_jx}}';
-        allScores['{{technique.key}}'].tags.spatial_jx='{{technique.spatial_jx}}';
-        allScores['{{technique.key}}'].tags.filter='{{technique.filter}}';
-        allScores['{{technique.key}}'].tags.aggregate='{{technique.aggregate}}';
-        allScores['{{technique.key}}'].tags.embed='{{technique.embed}}';
-        allScores['{{technique.key}}'].tags.glyphs='{{technique.glyphs}}';
-        allScores['{{technique.key}}'].tags.bar_charts='{{technique.bar_charts}}';
-        allScores['{{technique.key}}'].tags.scatterplots='{{technique.scatterplots}}';
-        allScores['{{technique.key}}'].tags.matrix='{{technique.matrix}}';
-        allScores['{{technique.key}}'].tags.parallel_coordinates='{{technique.parallel_coordinates}}';
-        allScores['{{technique.key}}'].tags.map_2d='{{technique.map_2d}}';
-        allScores['{{technique.key}}'].tags.map_3d='{{technique.map_3d}}';
-        allScores['{{technique.key}}'].tags.walking='{{technique.walking}}';
-        allScores['{{technique.key}}'].tags.steering='{{technique.steering}}';
-        allScores['{{technique.key}}'].tags.selection_based='{{technique.selection_based}}';
-        allScores['{{technique.key}}'].tags.manipulation_based='{{technique.manipulation_based}}';
-        allScores['{{technique.key}}'].tags.distortion='{{technique.distortion}}';
-        allScores['{{technique.key}}'].tags.ghosting='{{technique.ghosting}}';
-        allScores['{{technique.key}}'].tags.culling='{{technique.culling}}';
-        allScores['{{technique.key}}'].tags.birds_view='{{technique.birds_view}}';
-        allScores['{{technique.key}}'].tags.multi_view='{{technique.multi_view}}';
-        allScores['{{technique.key}}'].tags.assisted_steering='{{technique.assisted_steering}}';
-        allScores['{{technique.key}}'].tags.other='{{technique.other}}';
-        allScores['{{technique.key}}'].tags.vr_cave='{{technique.vr_cave}}';
-        allScores['{{technique.key}}'].tags.ar='{{technique.ar}}';
-        allScores['{{technique.key}}'].tags.desktop='{{technique.desktop}}';
-        allScores['{{technique.key}}'].tags.mobile='{{technique.mobile}}';
-        allScores['{{technique.key}}'].tags.case_study='{{technique.case_study}}';
-        allScores['{{technique.key}}'].tags.user_study='{{technique.user_study}}';
-        allScores['{{technique.key}}'].tags.statistical_evaluation='{{technique.statistical_evaluation}}';
-        allScores['{{technique.key}}'].tags.expert_interviews='{{technique.expert_interviews}}';
+        allScores['{{technique.key}}'].tags.multi_block='{{technique.classifications.multi_block}}';
+        allScores['{{technique.key}}'].tags.city='{{technique.classifications.city}}';
+        allScores['{{technique.key}}'].tags.va_wo_model='{{technique.classifications.va_wo_model}}';
+        allScores['{{technique.key}}'].tags.post_model='{{technique.classifications.post_model}}';
+        allScores['{{technique.key}}'].tags.model_integrated='{{technique.classifications.model_integrated}}';
+        allScores['{{technique.key}}'].tags.assisted_models='{{technique.classifications.assisted_models}}';
+        allScores['{{technique.key}}'].tags.overlay='{{technique.classifications.overlay}}';
+        allScores['{{technique.key}}'].tags.embedded='{{technique.classifications.embedded}}';
+        allScores['{{technique.key}}'].tags.linked='{{technique.classifications.linked}}';
+        allScores['{{technique.key}}'].tags.temporal_jx='{{technique.classifications.temporal_jx}}';
+        allScores['{{technique.key}}'].tags.spatial_jx='{{technique.classifications.spatial_jx}}';
+        allScores['{{technique.key}}'].tags.filter='{{technique.classifications.filter}}';
+        allScores['{{technique.key}}'].tags.aggregate='{{technique.classifications.aggregate}}';
+        allScores['{{technique.key}}'].tags.embed='{{technique.classifications.embed}}';
+        allScores['{{technique.key}}'].tags.glyphs='{{technique.classifications.glyphs}}';
+        allScores['{{technique.key}}'].tags.bar_charts='{{technique.classifications.bar_charts}}';
+        allScores['{{technique.key}}'].tags.scatterplots='{{technique.classifications.scatterplots}}';
+        allScores['{{technique.key}}'].tags.matrix='{{technique.classifications.matrix}}';
+        allScores['{{technique.key}}'].tags.parallel_coordinates='{{technique.classifications.parallel_coordinates}}';
+        allScores['{{technique.key}}'].tags.map_2d='{{technique.classifications.map_2d}}';
+        allScores['{{technique.key}}'].tags.map_3d='{{technique.classifications.map_3d}}';
+        allScores['{{technique.key}}'].tags.walking='{{technique.classifications.walking}}';
+        allScores['{{technique.key}}'].tags.steering='{{technique.classifications.steering}}';
+        allScores['{{technique.key}}'].tags.selection_based='{{technique.classifications.selection_based}}';
+        allScores['{{technique.key}}'].tags.manipulation_based='{{technique.classifications.manipulation_based}}';
+        allScores['{{technique.key}}'].tags.distortion='{{technique.classifications.distortion}}';
+        allScores['{{technique.key}}'].tags.ghosting='{{technique.classifications.ghosting}}';
+        allScores['{{technique.key}}'].tags.culling='{{technique.classifications.culling}}';
+        allScores['{{technique.key}}'].tags.birds_view='{{technique.classifications.birds_view}}';
+        allScores['{{technique.key}}'].tags.multi_view='{{technique.classifications.multi_view}}';
+        allScores['{{technique.key}}'].tags.assisted_steering='{{technique.classifications.assisted_steering}}';
+        allScores['{{technique.key}}'].tags.other='{{technique.classifications.other}}';
+        allScores['{{technique.key}}'].tags.vr_cave='{{technique.classifications.vr_cave}}';
+        allScores['{{technique.key}}'].tags.ar='{{technique.classifications.ar}}';
+        allScores['{{technique.key}}'].tags.desktop='{{technique.classifications.desktop}}';
+        allScores['{{technique.key}}'].tags.mobile='{{technique.classifications.mobile}}';
+        allScores['{{technique.key}}'].tags.case_study='{{technique.classifications.case_study}}';
+        allScores['{{technique.key}}'].tags.user_study='{{technique.classifications.user_study}}';
+        allScores['{{technique.key}}'].tags.statistical_evaluation='{{technique.classifications.statistical_evaluation}}';
+        allScores['{{technique.key}}'].tags.expert_interviews='{{technique.classifications.expert_interviews}}';
 
         allScores['{{technique.key}}'].abstract = '{{technique.abstract}}';
         allScores['{{technique.key}}'].publication_title = '{{technique.publication_title}}';
@@ -285,6 +325,8 @@ howPanel:
 
       '{% endfor %}' 
       
+      console.log(allScores);
+
       render_techniques(allScores);
 
             create_panel(allScores, optionsObjectPaperType, "#wizard_panel_paper_type");
