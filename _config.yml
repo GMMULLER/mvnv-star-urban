@@ -34,8 +34,6 @@ collections:
   #   output: false
   # projects:
   #   output: true
-  # talks:
-  #   output: false
   techniques:
     output: true
     permalink: /techniques/:path/

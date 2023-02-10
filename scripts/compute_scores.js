@@ -187,8 +187,6 @@ function compute_scores(allScores){
   //create a list of key/value pairs to use in the scores
   let activeOptions = d3.selectAll('.is-active').data(); 
   
-  console.log("activeOptions", activeOptions);
-
   // let num2strMap = {
   //   "1": "ones",
   //   "2": "twos",

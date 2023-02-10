@@ -33,7 +33,7 @@ categories:
     <div class="column is-three-quarters">
 
       <header id="title" class="publication-title">
-        <h1>{{ page.title | remove: "| Vis Design Lab" }}</h1>
+        <h1><a href='http://doi.org/{{ page.doi }}'>{{ page.title | remove: "| Vis Design Lab" }}</a></h1>
       </header>
 
       <div class="column is-full">
@@ -89,11 +89,15 @@ categories:
 
       <div class="column is-full">
         <h2>Tags</h2>
+
+        <br>
+
         <div>
           {% for post in page.classifications %}
             <p>
                 
                 {% if post[0] == "system_type" %}
+                  <h3>Paper Type</h3>
                   System
                 {% elsif post[0] == "technique" %}
                   Technique
@@ -106,6 +110,7 @@ categories:
                 {% elsif post[0] == "analysis" %}
                   Analysis
                 {% elsif post[0] == "generation" %}
+                  <h3>Urban Life Cycle (WHY)</h3>
                   Generation
                 {% elsif post[0] == "curation_and_transformation" %}
                   Curation & transformation
@@ -118,6 +123,7 @@ categories:
                 {% elsif post[0] == "visualization" %}
                   Visualization
                 {% elsif post[0] == "sunlight_access" %}
+                  <h3>Use Case (WHY)</h3>
                   Sunlight access
                 {% elsif post[0] == "wind_ventilation" %}
                   Wind
@@ -136,6 +142,7 @@ categories:
                 {% elsif post[0] == "other_use" %}
                   Other use
                 {% elsif post[0] == "lookup" %}
+                  <h3>Analysis Action (WHY)</h3>
                   Lookup
                 {% elsif post[0] == "browse" %}
                   Browse
@@ -152,6 +159,7 @@ categories:
                 {% elsif post[0] == "spatial_relation" %}
                   Spatial relationship
                 {% elsif post[0] == "distribution" %}
+                  <h3>Analysis Target (WHY)</h3>
                   Distribution
                 {% elsif post[0] == "trends" %}
                   Trends
@@ -162,16 +170,19 @@ categories:
                 {% elsif post[0] == "features" %}
                   Features
                 {% elsif post[0] == "target_discovery" %}
+                  <h3>Visual Tasks (WHY)</h3>
                   Target Discovery
                 {% elsif post[0] == "target_access" %}
                   Target Access
                 {% elsif post[0] == "buildings" %}
+                  <h3>Physical Data Entities (WHAT)</h3>
                   Buildings
                 {% elsif post[0] == "streets" %}
                   Streets
                 {% elsif post[0] == "nature" %}
                   Nature
                 {% elsif post[0] == "uniform_discretization" %}
+                  <h3>Thematic Data Properties (WHAT)</h3>
                   Uniform
                 {% elsif post[0] == "structural_subdivision" %}
                   Semantic
@@ -184,6 +195,7 @@ categories:
                 {% elsif post[0] == "temporal" %}
                   Temporal
                 {% elsif post[0] == "sensing" %}
+                  <h3>Thematic Data Origin (WHAT)</h3>
                   Sensing
                 {% elsif post[0] == "statistical" %}
                   Statistical
@@ -194,12 +206,14 @@ categories:
                 {% elsif post[0] == "surveyed" %}
                   Surveyed
                 {% elsif post[0] == "micro" %}
+                  <h3>Scope (WHAT)</h3>
                   Micro
                 {% elsif post[0] == "multi_block" %}
                   Meso
                 {% elsif post[0] == "city" %}
                   Macro
                 {% elsif post[0] == "va_wo_model" %}
+                  <h3>VA + Model (HOW)</h3>
                   VA w/o models
                 {% elsif post[0] == "post_model" %}
                   Post-model VA
@@ -208,6 +222,7 @@ categories:
                 {% elsif post[0] == "assisted_models" %}
                   VA-assisted model
                 {% elsif post[0] == "overlay" %}
+                  <h3>Layers (HOW)</h3>
                   Overlay
                 {% elsif post[0] == "embedded" %}
                   Embedded view
@@ -218,12 +233,14 @@ categories:
                 {% elsif post[0] == "spatial_jx" %}
                   Spatial jx
                 {% elsif post[0] == "filter" %}
+                  <h3>Visualization Reducation (HOW)</h3>
                   Filter
                 {% elsif post[0] == "aggregate" %}
                   Aggregate 
                 {% elsif post[0] == "embed" %}
                   Embed 
                 {% elsif post[0] == "glyphs" %}
+                  <h3>Encoding (HOW)</h3>
                   Glyphs / streamlines
                 {% elsif post[0] == "bar_charts" %}
                   Bar charts
@@ -244,6 +261,7 @@ categories:
                 {% elsif post[0] == "map_3d" %}
                   3D map
                 {% elsif post[0] == "distortion" %}
+                  <h3>Occlusion Handling (HOW)</h3>
                   Distortion
                 {% elsif post[0] == "ghosting" %}
                   Ghosting
@@ -258,6 +276,7 @@ categories:
                 {% elsif post[0] == "other" %}
                   Other
                 {% elsif post[0] == "vr_cave" %}
+                  <h3>Technology (HOW)</h3>
                   VR/Cave
                 {% elsif post[0] == "ar" %}
                   AR
@@ -266,6 +285,7 @@ categories:
                 {% elsif post[0] == "mobile" %}
                   Mobile
                 {% elsif post[0] == "case_study" %}
+                  <h3>Evaluation (HOW)</h3>
                   Case Study
                 {% elsif post[0] == "user_study" %}
                   User Study
@@ -274,6 +294,7 @@ categories:
                 {% elsif post[0] == "expert_interviews" %}
                   Expert Interviews
                 {% elsif post[0] == "walking" %}
+                  <h3>Navigation (HOW)</h3>
                   Walking
                 {% elsif post[0] == "steering" %}
                   Steering

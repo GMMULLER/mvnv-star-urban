@@ -2,8 +2,8 @@
 ---
 
 svgString().then(logo => {
-     d3.select("#svg").html(logo);
-     run();
+    //  d3.select("#svg").html(logo);
+    //  run();
   });
   
   function run() {

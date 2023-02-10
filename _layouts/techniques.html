@@ -5,7 +5,7 @@ layout: default
 <section class="section">
   <!-- <article class="publications-content"> -->
 
-  <div class="column is-full">
+  <!-- <div class="column is-full">
 
     <header class="card-header">
       <h1 class="card-header-title">
@@ -44,126 +44,7 @@ layout: default
 
     </div>
 
-  </div>
-
-
-  <div class="column is-full">
-
-    <header class="card-header">
-      <h1 class="card-header-title">
-        Tabular Layouts
-      </h1>
-
-    </header>
-
-    <div class="card-content">
-      <div class="content">
-        <p>
-          Tabular layouts encompass approaches where nodes and/or links
-          are represented as columns and/or rows of a table. The most well
-          known of these approaches is the adjacency matrix, but this category
-          also includes Quilts and BioFabric.
-          A beneficial property of all tabular layouts with respect to multivariate
-          networks analysis is that nodes, and in some cases edges, are
-          in dedicated rows or columns, which can also be used to visualize
-          attributes.
-
-        </p>
-
-      </div>
-
-      <div class="columns">
-
-        {% for technique in site.techniques  %}
-        {% if technique.type == "tabular" %}
-        {% include technique_list_entry.html %}
-        {% endif %}
-        {% endfor %}
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="column is-full">
-
-    <header class="card-header">
-      <h1 class="card-header-title">
-        Implicit Layouts
-      </h1>
-
-    </header>
-
-    <div class="card-content">
-      <div class="content">
-        <p>
-          Implicit hierarchical layouts are techniques for visualizing trees
-          that rely on node positioning to encode edges. Well-known examples
-          are TreeMaps [JS91, vWvdW99], SunBursts [AH98, SZ00],
-          or Icicle Plots [KL83], but many variations are possible [SHS11].
-          These layouts excel at visualizing a numerical node attribute as
-          node size, and an additional node attribute as color, but are usually
-          not amenable to encode multiple attributes simultaneously. Since
-          edges are only implicitly encoded, edge attributes cannot be shown.
-
-          We distinguish between two types of implicit hierarchical layouts:
-          those that show the whole tree, i.e., the inner nodes and the
-          leaves, and those that show only the leaves of the tree.
-
-        </p>
-
-
-      </div>
-      <div class="columns">
-        {% for technique in site.techniques reversed  %}
-        {% if technique.type == "implicit" %}
-        {% include technique_list_entry.html %}
-        {% endif %}
-        {% endfor %}
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div class="column is-full">
-
-    <header class="card-header">
-      <h1 class="card-header-title">
-        Coordinated Views
-      </h1>
-
-    </header>
-
-    <div class="card-content">
-      <div class="content">
-
-        <p>
-          View operations combine existing techniques into coordinated
-          views, a technique commonly referred to as Multiple Coordinated
-          Views (MCVs). These approaches use separate,
-          dedicated views for the attributes and the topology. Common
-          examples are combinations of node-link diagrams with multidimensional
-          data visualization techniques or providing a detail view for individual nodes.
-        </p>
-
-
-      </div>
-      <div class="columns">
-
-        {% for technique in site.techniques  %}
-        {% if technique.type == "coordinated" %}
-        {% include technique_list_entry.html %}
-        {% endif %}
-        {% endfor %}
-      </div>
-
-    </div>
-
-  </div>
-
+  </div> -->
 
   <!-- </article> -->
 
