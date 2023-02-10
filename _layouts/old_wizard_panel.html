@@ -90,7 +90,6 @@
         .attr('label',d=>d.option)
         .property('checked',(d,i)=>i==0)
         .on('click',(d)=>{
-          console.log('clicked', d);
           //check if it is a 'none' option, in which case disable the type options;
     
           // var radios = document.getElementsByName('node_attr_type');
@@ -107,8 +106,6 @@
         // render_technique(scores[1])
         // render_technique(scores[2])
         // render_technique(scores[3])
-    
-        console.log('scores', scores)
     
         });
     

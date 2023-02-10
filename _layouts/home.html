@@ -22,28 +22,53 @@
                     <div class="tile is-parent is-vertical">
                         <article class="tile is-child notification is-primary has-text-black">
                             <p class="title">About</p>
-                            <p class="subtitle"></p>
-                            <p class="content"></p>
-                        </article>
+                            <!-- <p style="font-size: 1.2rem; text-align: justify;">This is a companion website for a review article on visual analytics for 3D urban data</p> -->
+                            <p class="subtitle">This is a companion website for a review article on visual analytics for 3D urban data</p>
+                            <p style="font-size: 1rem;"><b>Authors: </b>Fabio Miranda, Thomas Ortner, Gustavo Moreira, Maryam Hosseini, Marcos Lage,
+                                Filip Biljecki, Claudio T. Silva, Nivan Ferreira</p>
+                            <p class="content">
+                                The urbanization and verticalization of cities around the world increase the impact of three-dimensional urban structures in many phenomena of interest to various urban stakeholders. 
+                                Recently, with the growing availability of 3D urban data, several research contributions have targeted 3D-oriented visual analysis tasks in urban areas. 
+                                However, the third dimension strengthens the difficulty in addressing the various challenges in designing effective visual analytics tools.
+                                In this paper, we present a survey on visual analytics for 3D urban data. Our work characterizes published works along three main dimensions (why, what, and how), considering use cases, analysis tasks, data, visualizations, and interactions.
+                                We provide a fine-grained categorization of published works from visualization journals and conferences, as well as a myriad of urban domains, including urban planning, architecture, and engineering.
+                                By including the perspectives from both urban and visualization experts, we assess gaps in the literature, motivate visualization researchers to understand challenges and opportunities, and indicate future research directions.</p>
+                        
+                            <p class="content">
+                                Use our wizard to browse through a corpus of more than 90 papers covering a period of more than ten years and almost 20 venues.
+                            </p>
+                        
+                            <p class="content">
+                                Feel free to <a href="mailto:fabiom@uic.edu;gmorei3@uic.edu">get in touch</a> if you have any questions or comments.
+                            </p>
+
+                            </article>
                     </div>
 
-
-
                     <div class="tile is-parent is-vertical">
-                        <article class="tile is-child notification is-info">
+                        <article class="tile is-child notification is-info" style="font-size: 1.25em;">
                             <p class="title">Use the Wizard</p>
-                            <p class="subtitle">
-                                <br/><br/></p>
+                                
+                                <p style="color: white;">Use the <a href="/vis/wizard">wizard tab</a> to navigate and filter the surveyed papers. We summarize previous visualization and domain-specific contributions using an interrogative method that categorize the papers concerning three questions:</p>
+
+                                <br>
+
+                                <ul>
+                                    <li><b>Why</b> is 3D urban data being analyzed</li>
+                                    <li><b>What</b> data is being analyzed</li>
+                                    <li><b>How</b> it is being analyzed</li>
+                                </ul>
+                                
                         </article>
 
-                            <div class="tile">
+                            <!-- <div class="tile">
                         <div class="tile is-parent">
                                 <article class="tile is-child notification is-warning">
                                         <p class="title">Read the Paper</p>
                                     </article>
 
                         </div>
-                            </div>
+                            </div> -->
 
                                 
                     </div>
@@ -89,7 +114,6 @@
             .on('click', function (d) {
 
                 let groupId = d3.select(this.parentNode).attr('id');
-                console.log('groupId is ', groupId);
 
                 if (groupId.includes('label')) {
                     window.location = '/vis/techniques/';
@@ -105,7 +129,6 @@
             .on('click', (d) => console.log('moused over adj_matrix'));
 
 
-        console.log(div.select('#quilts').size())
     });
 
 
