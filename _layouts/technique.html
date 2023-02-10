@@ -108,14 +108,14 @@ categories:
                 {% elsif post[0] == "generation" %}
                   Generation
                 {% elsif post[0] == "curation_and_transformation" %}
-                  Curation and Transformation
+                  Curation & transformation
                 {% elsif post[0] == "management" %}
                   Management
                 {% elsif post[0] == "modeling" %}
                   Modeling
                 {% elsif post[0] == "urban_analysis" %}
                   Urban Analysis
-                {% elsif post[0] == "visualization " %}
+                {% elsif post[0] == "visualization" %}
                   Visualization
                 {% elsif post[0] == "sunlight_access" %}
                   Sunlight access
@@ -133,8 +133,8 @@ categories:
                   Noise
                 {% elsif post[0] == "property_cadastre" %}
                   Property Cadastre
-                {% elsif post[0] == "others" %}
-                  Other
+                {% elsif post[0] == "other_use" %}
+                  Other use
                 {% elsif post[0] == "lookup" %}
                   Lookup
                 {% elsif post[0] == "browse" %}
@@ -163,7 +163,7 @@ categories:
                   Features
                 {% elsif post[0] == "target_discovery" %}
                   Target Discovery
-                {% elsif post[0] == "target_access " %}
+                {% elsif post[0] == "target_access" %}
                   Target Access
                 {% elsif post[0] == "buildings" %}
                   Buildings
@@ -175,6 +175,8 @@ categories:
                   Uniform
                 {% elsif post[0] == "structural_subdivision" %}
                   Semantic
+                {% elsif post[0] == "univariate" %}
+                  Univariate
                 {% elsif post[0] == "multivariate" %}
                   Multivariate
                 {% elsif post[0] == "volumetric" %}
@@ -227,8 +229,14 @@ categories:
                   Bar charts
                 {% elsif post[0] == "scatterplots" %}
                   Scatterplots
+                {% elsif post[0] == "linegraphs" %}
+                  Linegraphs
                 {% elsif post[0] == "matrix" %}
                   Matrix
+                {% elsif post[0] == "grid" %}
+                  Grid
+                {% elsif post[0] == "boxplot" %}
+                  BoxPlot
                 {% elsif post[0] == "parallel_coordinates" %}
                   Parallel coord.
                 {% elsif post[0] == "map_2d" %}
@@ -239,6 +247,8 @@ categories:
                   Distortion
                 {% elsif post[0] == "ghosting" %}
                   Ghosting
+                {% elsif post[0] == "culling" %}
+                  Culling
                 {% elsif post[0] == "birds_view" %}
                   Birds view
                 {% elsif post[0] == "multi_view" %}
@@ -248,7 +258,7 @@ categories:
                 {% elsif post[0] == "other" %}
                   Other
                 {% elsif post[0] == "vr_cave" %}
-                  VR Cave
+                  VR/Cave
                 {% elsif post[0] == "ar" %}
                   AR
                 {% elsif post[0] == "desktop" %}
@@ -272,13 +282,12 @@ categories:
                 {% elsif post[0] == "manipulation_based" %}
                   Manipulation
                 {% else %}
-                  {{ post[0] }}
                 {% endif %}
 
-              {% if post[1] == "True" %}
+              {% if post[1] == "True" and post[0] != "site" and post[0] != "block" %}
                 <i class="fas fa-check-circle" style="color: #146EBE"></i>
               {% endif %}
-              {% if post[1] == "False" %}
+              {% if post[1] == "False" and post[0] != "site" and post[0] != "block" %}
                 <i class="far fa-check-circle" style="color: rgb(189, 189, 189)"></i>
               {% endif %}
             </p>

@@ -33,7 +33,7 @@ whyPanel:
       - Climate
       - Noise
       - "Property Cadastre"
-      - Other
+      - "Other use" 
   analysis_action: 
     label: "Analysis Action (WHY)"
     options: 
@@ -57,7 +57,7 @@ whyPanel:
     options:
       - "Target Discovery"
       - "Target Access"
-      - "Spatial Relationship"
+      - "Spatial relationship"
 
 whatPanel:
   physical_data_entities: 
@@ -125,7 +125,7 @@ howPanel:
       - "Parallel coord."
       - "2D map"
       - "3D map"
-  navigation: 
+  urban_navigation: 
     label: "Navigation (HOW)"
     options: 
       - Walking
@@ -145,7 +145,7 @@ howPanel:
   technology: 
     label: "Technology (HOW)"
     options: 
-      - "VR / Cave"
+      - "VR/Cave"
       - "AR"
       - "Desktop"
       - "Mobile"
@@ -234,7 +234,7 @@ howPanel:
         allScores['{{technique.key}}'].tags.climate='{{technique.classifications.climate}}';
         allScores['{{technique.key}}'].tags.sound='{{technique.classifications.sound}}';
         allScores['{{technique.key}}'].tags.property_cadastre='{{technique.classifications.property_cadastre}}';
-        allScores['{{technique.key}}'].tags.others='{{technique.classifications.others}}';
+        allScores['{{technique.key}}'].tags.other_use='{{technique.classifications.other_use}}';
         allScores['{{technique.key}}'].tags.lookup='{{technique.classifications.lookup}}';
         allScores['{{technique.key}}'].tags.browse='{{technique.classifications.browse}}';
         allScores['{{technique.key}}'].tags.locate='{{technique.classifications.locate}}';
@@ -294,7 +294,10 @@ howPanel:
         allScores['{{technique.key}}'].tags.glyphs='{{technique.classifications.glyphs}}';
         allScores['{{technique.key}}'].tags.bar_charts='{{technique.classifications.bar_charts}}';
         allScores['{{technique.key}}'].tags.scatterplots='{{technique.classifications.scatterplots}}';
+        allScores['{{technique.key}}'].tags.linegraphs='{{technique.classifications.linegraphs}}';
         allScores['{{technique.key}}'].tags.matrix='{{technique.classifications.matrix}}';
+        allScores['{{technique.key}}'].tags.grid='{{technique.classifications.grid}}';
+        allScores['{{technique.key}}'].tags.boxplot='{{technique.classifications.boxplot}}';
         allScores['{{technique.key}}'].tags.parallel_coordinates='{{technique.classifications.parallel_coordinates}}';
         allScores['{{technique.key}}'].tags.map_2d='{{technique.classifications.map_2d}}';
         allScores['{{technique.key}}'].tags.map_3d='{{technique.classifications.map_3d}}';

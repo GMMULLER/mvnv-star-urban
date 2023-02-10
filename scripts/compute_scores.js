@@ -249,7 +249,7 @@ function compute_scores(allScores){
         activeOptionsArray.push("modeling");
         break;
       case "Urban Analysis":
-        activeOptionsArray.push("analysis");
+        activeOptionsArray.push("urban_analysis");
         break;
       case "Visualization":
         activeOptionsArray.push("visualization");
@@ -278,8 +278,8 @@ function compute_scores(allScores){
       case "Property Cadastre":
         activeOptionsArray.push("property_cadastre");
         break;
-      case "Other":
-        activeOptionsArray.push("others");
+      case "Other use":
+        activeOptionsArray.push("other_use");
         break;
       case "Lookup":
         activeOptionsArray.push("lookup");
