@@ -109,19 +109,6 @@ categories:
                   Data
                 {% elsif post[0] == "analysis" %}
                   Analysis
-                {% elsif post[0] == "generation" %}
-                  <h3>Urban Life Cycle (WHY)</h3>
-                  Generation
-                {% elsif post[0] == "curation_and_transformation" %}
-                  Curation & transformation
-                {% elsif post[0] == "management" %}
-                  Management
-                {% elsif post[0] == "modeling" %}
-                  Modeling
-                {% elsif post[0] == "urban_analysis" %}
-                  Urban Analysis
-                {% elsif post[0] == "visualization" %}
-                  Visualization
                 {% elsif post[0] == "sunlight_access" %}
                   <h3>Use Case (WHY)</h3>
                   Sunlight access
@@ -305,10 +292,10 @@ categories:
                 {% else %}
                 {% endif %}
 
-              {% if post[1] == "True" and post[0] != "site" and post[0] != "block" %}
+              {% if post[1] == "True" and post[0] != "site" and post[0] != "block" and post[0] != "generation" and post[0] != "curation_and_transformation" and post[0] != "management" and post[0] != "modeling" and post[0] != "urban_analysis" and post[0] != "visualization" %}
                 <i class="fas fa-check-circle" style="color: #146EBE"></i>
               {% endif %}
-              {% if post[1] == "False" and post[0] != "site" and post[0] != "block" %}
+              {% if post[1] == "False" and post[0] != "site" and post[0] != "block" and post[0] != "generation" and post[0] != "curation_and_transformation" and post[0] != "management" and post[0] != "modeling" and post[0] != "urban_analysis" and post[0] != "visualization" %}
                 <i class="far fa-check-circle" style="color: rgb(189, 189, 189)"></i>
               {% endif %}
             </p>

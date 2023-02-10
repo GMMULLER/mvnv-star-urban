@@ -13,15 +13,6 @@ paperTypePanel:
       - "Analysis"
 
 whyPanel:
-  urban_life_cycle:
-    label: "Urban Life Cycle (WHY)"
-    options:
-      - "Generation"
-      - "Curation & transformation"
-      - "Management"
-      - "Modeling"
-      - "Urban Analysis"
-      - "Visualization"
   use_case: 
     label: "Use Case (WHY)"
     options: 
@@ -220,13 +211,7 @@ howPanel:
         allScores['{{technique.key}}'].tags.evaluation='{{technique.classifications.evaluation}}';
         allScores['{{technique.key}}'].tags.data='{{technique.classifications.data}}';
         allScores['{{technique.key}}'].tags.analysis='{{technique.classifications.analysis}}';
-        allScores['{{technique.key}}'].tags.generation='{{technique.classifications.generation}}';
-        allScores['{{technique.key}}'].tags.curation_and_transformation='{{technique.classifications.curation_and_transformation}}';
-        allScores['{{technique.key}}'].tags.management='{{technique.classifications.management}}';
-        allScores['{{technique.key}}'].tags.modeling='{{technique.classifications.modeling}}';
         allScores['{{technique.key}}'].tags.energy='{{technique.classifications.energy}}';
-        allScores['{{technique.key}}'].tags.urban_analysis='{{technique.classifications.urban_analysis}}';
-        allScores['{{technique.key}}'].tags.visualization='{{technique.classifications.visualization}}';
         allScores['{{technique.key}}'].tags.sunlight_access='{{technique.classifications.sunlight_access}}';
         allScores['{{technique.key}}'].tags.wind_ventilation='{{technique.classifications.wind_ventilation}}';
         allScores['{{technique.key}}'].tags.view_impact='{{technique.classifications.view_impact}}';
@@ -328,8 +313,6 @@ howPanel:
 
       '{% endfor %}' 
       
-      console.log(allScores);
-
       render_techniques(allScores);
 
             create_panel(allScores, optionsObjectPaperType, "#wizard_panel_paper_type");
