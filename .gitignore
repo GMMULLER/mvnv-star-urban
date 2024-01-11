@@ -13,3 +13,4 @@ css/site.css
 *.zip
 *.pdf
 .DS_Store
+papers.csv
