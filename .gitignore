@@ -14,3 +14,6 @@ css/site.css
 *.pdf
 .DS_Store
 papers.csv
+/parsing_papers/papers
+/parsing_papers/parsed_papers
+/parsing_papers/*.csv
