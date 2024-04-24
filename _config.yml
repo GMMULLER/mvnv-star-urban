@@ -1,6 +1,6 @@
 # Site settings
-title: A Survey on Visual Analytics for 3D Urban Data
-description: "Website for Urban Survey"
+title: The State of the Art in Visual Analytics for 3D Urban Data
+description: "Website for The State of the Art in Visual Analytics for 3D Urban Data"
 baseurl: "/vis"
 url: "https://urban-survey.github.io/"
 domain: "urban-survey.github.io"
